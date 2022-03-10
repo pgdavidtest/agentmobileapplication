@@ -1,0 +1,72 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1646889509967' stop='1646889514358'>
+    <name>Mobile native basic scenario</name>
+    <title>Mobile native basic scenario</title>
+    <test-cases>
+        <test-case start='1646889509992' status='broken' stop='1646889514351'>
+            <name>As an user, I can open login to the demo mobile native app</name>
+            <title>As an user, I can open login to the demo mobile native app</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='iPhone12-15.0'/>
+            </parameters>
+            <steps>
+                <step start='1646889510004' status='passed' stop='1646889510071'>
+                    <name>Given I open the demo app</name>
+                    <title>Given I open the demo app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646889510072' status='passed' stop='1646889511569'>
+                    <name>When I lock device</name>
+                    <title>When I lock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='331004dc-cf7b-45d4-bb12-d5cce1ed53d0-attachment.png' type='image/png' size='1017281'/>
+                        <attachment title='Screenshot' source='12df7e21-1efc-4851-be65-4a8f44c51c94-attachment.png' type='image/png' size='1017281'/>
+                        <attachment title='Screenshot' source='7a4e4ee3-3b88-414d-8ac1-85325aa9c032-attachment.png' type='image/png' size='1017281'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646889511570' status='passed' stop='1646889514339'>
+                    <name>And I unlock device</name>
+                    <title>And I unlock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='b793b6a5-9ae8-4644-b88f-892768addf9d-attachment.png' type='image/png' size='65574'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646889514339' status='broken' stop='1646889514350'>
+                    <name>And I navigate to login tab</name>
+                    <title>And I navigate to login tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646889514351' status='canceled' stop='1646889514352'>
+                    <name>And I initiate login with davidp and Ameritas@2022</name>
+                    <title>And I initiate login with davidp and Ameritas@2022</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646889514352' status='canceled' stop='1646889514352'>
+                    <name>Then I close the app</name>
+                    <title>Then I close the app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read property 'touchAction' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'touchAction' of undefined
+                    at PrivacyPage.txtAccept_tap (/Users/olugbengapeluola/Desktop/AutomationProject/Ameritas/test-mobile-native/features/pageobjects/privacy.page.js:24:31)
+                    at World.&lt;anonymous> (/Users/olugbengapeluola/Desktop/AutomationProject/Ameritas/test-mobile-native/features/step-definitions/steps.js:20:23)
+                    at World.executeAsync (/Users/olugbengapeluola/Desktop/AutomationProject/Ameritas/test-mobile-native/node_modules/@wdio/utils/build/shim.js:284:25)
+                    at World.testFrameworkFnWrapper (/Users/olugbengapeluola/Desktop/AutomationProject/Ameritas/test-mobile-native/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

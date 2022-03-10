@@ -1,0 +1,85 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1646909533599' stop='1646909539397'>
+    <name>Mobile native basic scenario</name>
+    <title>Mobile native basic scenario</title>
+    <test-cases>
+        <test-case start='1646909533621' status='broken' stop='1646909539386'>
+            <name>As an user, I can open login to the demo mobile native app</name>
+            <title>As an user, I can open login to the demo mobile native app</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='iPhone12-15.0'/>
+            </parameters>
+            <steps>
+                <step start='1646909533625' status='passed' stop='1646909533666'>
+                    <name>Given I open the demo app</name>
+                    <title>Given I open the demo app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646909533666' status='passed' stop='1646909535369'>
+                    <name>When I lock device</name>
+                    <title>When I lock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='8c6e2164-f7f3-4849-8fef-489fc9e54585-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='4ca13815-8beb-4bfa-88ec-fbd9522efa17-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='50b8fcea-d728-42d4-8681-5d1732a740bb-attachment.png' type='image/png' size='849436'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646909535369' status='passed' stop='1646909537581'>
+                    <name>And I unlock device</name>
+                    <title>And I unlock device</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646909537581' status='passed' stop='1646909537602'>
+                    <name>And I navigate to login tab</name>
+                    <title>And I navigate to login tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646909537602' status='broken' stop='1646909539386'>
+                    <name>And I initiate login</name>
+                    <title>And I initiate login</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='6e6e9ad3-df4e-4b04-ad98-6b1c8ff5c094-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='045f812d-0982-4fb5-99a9-473f047d3ea3-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='284b060b-db8c-43ed-8bbb-24b642ee99d4-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='28d97c8a-b5b3-4b74-ac55-282657271377-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='b95421db-1ff5-4d3b-a217-7c98123c0c64-attachment.png' type='image/png' size='849436'/>
+                        <attachment title='Screenshot' source='c904ec5b-b550-4740-b851-4512a413d1fa-attachment.png' type='image/png' size='849436'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646909539386' status='canceled' stop='1646909539390'>
+                    <name>Then I close the app</name>
+                    <title>Then I close the app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>NotImplementedError: Method is not implemented</message>
+                <stack-trace>NotImplementedError: Method is not implemented
+                    at XCUITestDriver.execute (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/lib/commands/execute.js:37:11)
+                    at commandExecutor (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:335:9)
+                    at /Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:146:12
+                    at AsyncLock._promiseTry (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:280:31)
+                    at exec (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:145:9)
+                    at AsyncLock.acquire (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:162:3)
+                    at XCUITestDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:348:39)
+                    at XCUITestDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/lib/driver.js:786:24)
+                    at AppiumDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/lib/appium.js:563:36)
+                    at runMicrotasks (&lt;anonymous>)
+                    at processTicksAndRejections (internal/process/task_queues.js:85:5)
+                    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:297:21)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

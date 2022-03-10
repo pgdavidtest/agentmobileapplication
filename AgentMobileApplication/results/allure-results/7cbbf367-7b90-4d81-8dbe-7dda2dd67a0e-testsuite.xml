@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1646944281041' stop='1646944289164'>
+    <name>Mobile native basic scenario</name>
+    <title>Mobile native basic scenario</title>
+    <test-cases>
+        <test-case start='1646944281074' status='passed' stop='1646944289162'>
+            <name>As an user, I can open login to the demo mobile native app</name>
+            <title>As an user, I can open login to the demo mobile native app</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='iPhone12-15.0'/>
+            </parameters>
+            <steps>
+                <step start='1646944281081' status='passed' stop='1646944281388'>
+                    <name>Given I open the app</name>
+                    <title>Given I open the app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646944281388' status='passed' stop='1646944282716'>
+                    <name>When I lock device</name>
+                    <title>When I lock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='b8740e01-6acd-4b37-8941-aea20ba36a93-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='236334d3-923e-4f24-8ace-7338f07d4cec-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='bea33bdf-b063-466c-822c-8225bc655b40-attachment.png' type='image/png' size='1016604'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646944282717' status='passed' stop='1646944284952'>
+                    <name>And I unlock device</name>
+                    <title>And I unlock device</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646944284952' status='passed' stop='1646944284962'>
+                    <name>And I validate the privacy notice page</name>
+                    <title>And I validate the privacy notice page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646944284962' status='passed' stop='1646944288932'>
+                    <name>And I tap on the privacy policy button</name>
+                    <title>And I tap on the privacy policy button</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='dc3a8ff3-979c-440f-8aa0-393f0cb61242-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='a85cf596-9073-49a9-897b-b3666fcfca23-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='d2ede174-bd44-4713-95ed-96275c0e2a2d-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='ad0061ab-419d-4cc7-93de-3c36f9809332-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='9c93ab3c-3a9d-4374-a59c-e1cc1c1c09a5-attachment.png' type='image/png' size='1016604'/>
+                        <attachment title='Screenshot' source='d0039548-c779-492d-b666-f86f94115412-attachment.png' type='image/png' size='1016604'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646944288932' status='passed' stop='1646944288940'>
+                    <name>Then I should be on the login screen</name>
+                    <title>Then I should be on the login screen</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646944288941' status='passed' stop='1646944289158'>
+                    <name>And I close the app</name>
+                    <title>And I close the app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

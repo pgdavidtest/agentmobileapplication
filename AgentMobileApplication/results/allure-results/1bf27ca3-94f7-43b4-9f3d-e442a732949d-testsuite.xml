@@ -1,0 +1,73 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1646910298835' stop='1646910305199'>
+    <name>Mobile native basic scenario</name>
+    <title>Mobile native basic scenario</title>
+    <test-cases>
+        <test-case start='1646910298845' status='passed' stop='1646910305196'>
+            <name>As an user, I can open login to the demo mobile native app</name>
+            <title>As an user, I can open login to the demo mobile native app</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='iPhone12-15.0'/>
+            </parameters>
+            <steps>
+                <step start='1646910298848' status='passed' stop='1646910298859'>
+                    <name>Given I open the demo app</name>
+                    <title>Given I open the demo app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646910298860' status='passed' stop='1646910299814'>
+                    <name>When I lock device</name>
+                    <title>When I lock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='5e548869-6c7e-491b-964e-eafd8c9d0453-attachment.png' type='image/png' size='1017251'/>
+                        <attachment title='Screenshot' source='95fc03fb-c8a1-4ed1-98a8-375156da266c-attachment.png' type='image/png' size='1017251'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646910299815' status='passed' stop='1646910302762'>
+                    <name>And I unlock device</name>
+                    <title>And I unlock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='d0210569-d75d-43e8-833e-4cc1a4054cd4-attachment.png' type='image/png' size='65574'/>
+                        <attachment title='Screenshot' source='afd5ec4d-534b-4eda-892c-7a269c37a3f5-attachment.png' type='image/png' size='65574'/>
+                        <attachment title='Screenshot' source='0498fcc1-bf0d-46b1-8192-0788f4015f29-attachment.png' type='image/png' size='65574'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646910302762' status='passed' stop='1646910302771'>
+                    <name>And I navigate to login tab</name>
+                    <title>And I navigate to login tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646910302771' status='passed' stop='1646910304528'>
+                    <name>And I initiate login</name>
+                    <title>And I initiate login</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='b608e97e-51ec-4e01-94ae-94c3c3773883-attachment.png' type='image/png' size='1019016'/>
+                        <attachment title='Screenshot' source='26af0b89-6f75-4610-9a8d-d545ef4e7237-attachment.png' type='image/png' size='1019016'/>
+                        <attachment title='Screenshot' source='5a97b17d-2ef9-4330-8f5e-06d20b17a80b-attachment.png' type='image/png' size='1019016'/>
+                        <attachment title='Screenshot' source='b6682138-1ef2-49d5-bdd8-41ac4a464238-attachment.png' type='image/png' size='1019016'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646910304528' status='passed' stop='1646910305193'>
+                    <name>Then I close the app</name>
+                    <title>Then I close the app</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='f4e325d0-a6ef-4a95-8562-ee4bf6342814-attachment.png' type='image/png' size='1019016'/>
+                        <attachment title='Screenshot' source='688782c8-ef9d-4d83-b868-aa2faf79f0d8-attachment.png' type='image/png' size='1019016'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

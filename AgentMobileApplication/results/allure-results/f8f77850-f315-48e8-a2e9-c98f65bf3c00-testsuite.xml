@@ -1,0 +1,86 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1646908987350' stop='1646908997621'>
+    <name>Mobile native basic scenario</name>
+    <title>Mobile native basic scenario</title>
+    <test-cases>
+        <test-case start='1646908987363' status='broken' stop='1646908997609'>
+            <name>As an user, I can open login to the demo mobile native app</name>
+            <title>As an user, I can open login to the demo mobile native app</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='iPhone12-15.0'/>
+            </parameters>
+            <steps>
+                <step start='1646908987367' status='passed' stop='1646908987496'>
+                    <name>Given I open the demo app</name>
+                    <title>Given I open the demo app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646908987497' status='passed' stop='1646908991192'>
+                    <name>When I lock device</name>
+                    <title>When I lock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='a0848a3f-1708-4da3-af2a-23282c770641-attachment.png' type='image/png' size='849450'/>
+                        <attachment title='Screenshot' source='cf0fe40c-bdf6-4bf6-a148-d5e73cf600fa-attachment.png' type='image/png' size='849450'/>
+                        <attachment title='Screenshot' source='40232d2c-eda3-4813-ae8a-a228334f154d-attachment.png' type='image/png' size='849450'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646908991192' status='passed' stop='1646908994923'>
+                    <name>And I unlock device</name>
+                    <title>And I unlock device</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='001d961d-0012-466a-938e-a0d112b8868f-attachment.png' type='image/png' size='65574'/>
+                        <attachment title='Screenshot' source='cab46596-d63e-481a-8f97-7f1ad52ac1f2-attachment.png' type='image/png' size='65574'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646908994938' status='passed' stop='1646908994982'>
+                    <name>And I navigate to login tab</name>
+                    <title>And I navigate to login tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1646908994982' status='broken' stop='1646908997608'>
+                    <name>And I initiate login with davidp and Ameritas@2022</name>
+                    <title>And I initiate login with davidp and Ameritas@2022</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='e224c75a-9230-4fed-ae38-d6749377f20f-attachment.png' type='image/png' size='3896884'/>
+                        <attachment title='Screenshot' source='cbb6dd45-78b4-4e56-9c7c-f58f83afda09-attachment.png' type='image/png' size='849450'/>
+                        <attachment title='Screenshot' source='e3755e1c-53de-4680-9677-a7de5e425943-attachment.png' type='image/png' size='849450'/>
+                        <attachment title='Screenshot' source='b9036164-ca64-4f28-a623-31965c1adda4-attachment.png' type='image/png' size='849450'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1646908997609' status='canceled' stop='1646908997610'>
+                    <name>Then I close the app</name>
+                    <title>Then I close the app</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>NotImplementedError: Method is not implemented</message>
+                <stack-trace>NotImplementedError: Method is not implemented
+                    at XCUITestDriver.execute (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/lib/commands/execute.js:37:11)
+                    at commandExecutor (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:335:9)
+                    at /Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:146:12
+                    at AsyncLock._promiseTry (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:280:31)
+                    at exec (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:145:9)
+                    at AsyncLock.acquire (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/async-lock/lib/index.js:162:3)
+                    at XCUITestDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/basedriver/driver.js:348:39)
+                    at XCUITestDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/lib/driver.js:786:24)
+                    at AppiumDriver.executeCommand (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/lib/appium.js:563:36)
+                    at runMicrotasks (&lt;anonymous>)
+                    at processTicksAndRejections (internal/process/task_queues.js:85:5)
+                    at asyncHandler (/Applications/Appium Server GUI.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:297:21)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
