@@ -6,9 +6,9 @@ import Page from './page';
 class SelectMFAPage extends Page {
     /**
      * define selectors using getter methods
-    */
-    
-     get txtMFAScreen() {
+     */
+
+    get txtMFAScreen() {
         return $('~Okta-Label');
     }
 
@@ -28,6 +28,10 @@ class SelectMFAPage extends Page {
         return $('~email-Factor');
     }
 
+    get btnCancelMFAScreen() {
+        return $('~Cancel-Login-ID');
+    }
+
     /**
      * methods to encapsule automation code to interact with the page
      */
@@ -37,7 +41,7 @@ class SelectMFAPage extends Page {
     }
 
     async selectMFAOption(mfafactor) {
-        await mfafactor.click()
+        await mfafactor.click();
     }
 }
 

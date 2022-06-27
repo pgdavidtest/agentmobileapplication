@@ -22,10 +22,11 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: ['./features/**/*.feature'],
+    specs: ['./features/tests/Demo.feature'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
+        './features/tests/Test*.feature',
     ],
     //
     // ============
@@ -60,7 +61,7 @@ exports.config = {
             'appium:platformVersion': '15.0',
             'appium:orientation': 'PORTRAIT',
             'appium:automationName': 'XCUITest',
-            'path': '/wd/hub/',
+            path: '/wd/hub/',
             'appium:newCommandTimeout': 240,
             'appium:app': join(
                 process.cwd(),
@@ -107,7 +108,7 @@ exports.config = {
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 180000,
     //
     // Default request retries count
     connectionRetryCount: 3,
@@ -166,7 +167,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
+        require: ['./features/step-definitions/*.steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -188,7 +189,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 60000,
+        timeout: 5000000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false,
     },
@@ -235,7 +236,7 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {},
+    before: function (capabilities, specs) {}, // This makes the page/screen to wait for loading first
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -265,7 +266,7 @@ exports.config = {
      * @param {Pickle.IPickleStep} step     step data
      * @param {IPickle}            scenario scenario pickle
      */
-    beforeStep: function (step, scenario) {
+    /*   beforeStep: function (step, scenario) {
         try {
             browser.takeScreenshot();
         } catch (error) {
@@ -275,7 +276,7 @@ exports.config = {
                 )}`,
             );
         }
-    },
+    }, */
     /**
      *
      * Runs after a Cucumber Step.

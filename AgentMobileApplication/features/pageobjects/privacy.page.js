@@ -7,30 +7,53 @@ class PrivacyPage extends Page {
     /**
      * define selectors using getter methods
      */
-
-     get screenTitle() {
-        return $('~Privacy Notice');
+    get btnBack() {
+        return $('//XCUIElementTypeStaticText[@name="Back"]');
     }
 
-    get txtAccept() {
-        return $('~Accept');
+    get screenTitle() {
+        return $('~App Privacy');
     }
 
-    get Decline() {
-        return $('~Decline');
+    get btnSave() {
+        return $('~Button-Accept-PN-ID');
+    }
+
+    get btnCapturePerformanceData() {
+        return $('~CapturePerformanceDataOption');
+    }
+
+    get btnAnonymizePersonalData() {
+        return $('~AnonymizePersonalDataOption');
+    }
+
+    get btnCrashReporting() {
+        return $('~CrashReportingOption');
     }
 
     /**
      * methods to encapsule automation code to interact with the page
      */
 
-    async txtAccept_tap() {
-        await this.txtAccept.waitForExist();
-        await this.txtAccept.click();
+    async tapSaveButton() {
+        await this.btnSave.waitForExist();
+        await this.btnSave.click();
     }
 
-    async txtDecline_tap() {
-        await this.textDecline.touchAction('tap');
+    async tapBackButton() {
+        await this.btnBack.click();
+    }
+
+    async tapCapturePerformanceDataToggle() {
+        await this.btnCapturePerformanceData.click();
+    }
+
+    async tapAnonymizePersonalDataToggle() {
+        await this.btnAnonymizePersonalData.click();
+    }
+
+    async tapCrashReporting() {
+        await this.btnCrashReporting.click();
     }
 }
 
