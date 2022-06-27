@@ -88,13 +88,10 @@ When(
             await expect($(`~${await element.Amount}`)).toExist();
             await expect($(`~${await element.Status}`)).toExist();
             await expect($(`~${await element.Filter}`)).toExist();
-            await driver.background(2);
-            const name = `value == "${element.FirstName}+ ' '+ ${element.LastName}" AND type == "XCUIElementTypeTextField"`;
-            const namelocator = await $(`-ios predicate string:${name}`);
-            namelocator.clearValue();
+            await searchPage.btnClearInput.click();
             await BottomNavBar.btnHome.click();
             await BottomNavBar.btnSearch.click();
-            //await searchPage.btnClearInput.click();
+            await driver.background(2);
             //await driver.pause(2000);
         }
     },

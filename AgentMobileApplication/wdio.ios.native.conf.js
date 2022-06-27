@@ -1,4 +1,5 @@
 const join = require('path').join;
+import allureReporter from '@wdio/allure-reporter'
 exports.config = {
     //
     // ====================
@@ -288,7 +289,10 @@ exports.config = {
      * @param {number}             result.duration duration of scenario in milliseconds
      */
     afterStep: function (step, scenario, result) {
-        try {
+        if (error) {
+            browser.takeScreenshot();
+        }
+        /*    try {
             browser.takeScreenshot();
         } catch (error) {
             console.log(
@@ -296,7 +300,7 @@ exports.config = {
                     error,
                 )}`,
             );
-        }
+        } */
     },
     /**
      *

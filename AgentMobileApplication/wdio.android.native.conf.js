@@ -265,7 +265,7 @@ exports.config = {
      * @param {IPickle}            scenario scenario pickle
      */
     beforeStep: function (step, scenario) {
-        try {
+        /*   try {
             browser.takeScreenshot();
         } catch (error) {
             console.log(
@@ -273,7 +273,7 @@ exports.config = {
                     error,
                 )}`,
             );
-        }
+        } */
     },
     /**
      *
@@ -286,7 +286,10 @@ exports.config = {
      * @param {number}             result.duration duration of scenario in milliseconds
      */
     afterStep: function (step, scenario, result) {
-        try {
+        if (error) {
+            browser.takeScreenshot();
+        }
+        /*  try {
             browser.takeScreenshot();
         } catch (error) {
             console.log(
@@ -294,7 +297,7 @@ exports.config = {
                     error,
                 )}`,
             );
-        }
+        } */
     },
     /**
      *
