@@ -15,8 +15,12 @@ class SearchPage extends Page {
         return $('//XCUIElementTypeStaticText[@name="Search"])[2]');
     } */
 
-    get txtSearchField() {
+    /* get txtSearchField() {
         return $('//XCUIElementTypeStaticText[@name="Search"])[2]');
+    } */
+
+    get txtSearchField() {
+        return $('~SearchID');
     }
 
     get btnClearInput() {

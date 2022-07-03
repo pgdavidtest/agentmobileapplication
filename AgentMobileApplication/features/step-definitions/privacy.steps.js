@@ -1,11 +1,22 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import LoginPage from '../pageobjects/login.page';
 import PrivacyPage from '../pageobjects/privacy.page';
+import searchPage from '../pageobjects/search.page';
 
 Given(/^I launch the app for the first time$/, async () => {
     await console.log('Mobile app is open');
     expect(PrivacyPage.screenTitle).toHaveText('App Privacy');
 });
+
+When(/^the push notification allert pops up$/, async () => {
+    await expect(PrivacyPage.pushNotificationAllert).toBeExisting()
+});
+
+When(/^I accept push notification$/, async () => {
+    await PrivacyPage.allowPushNotification.click();
+});
+
+
 
 When(/^I lock device$/, async () => {
     await driver.lock();

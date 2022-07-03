@@ -7,6 +7,15 @@ class PrivacyPage extends Page {
     /**
      * define selectors using getter methods
      */
+    get pushNotificationAllert() {
+        return $$('~“Agent” Would Like to Send You Notifications');
+    }
+    get declinePushNotification() {
+        return $('~Don’t Allow');
+    }
+    get allowPushNotification() {
+        return $('~Allow');
+    }
     get btnBack() {
         return $('//XCUIElementTypeStaticText[@name="Back"]');
     }

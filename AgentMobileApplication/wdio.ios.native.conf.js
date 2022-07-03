@@ -1,5 +1,5 @@
 const join = require('path').join;
-import allureReporter from '@wdio/allure-reporter'
+//import allureReporter from '@wdio/allure-reporter'
 exports.config = {
     //
     // ====================
@@ -109,7 +109,7 @@ exports.config = {
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
-    connectionRetryTimeout: 180000,
+    connectionRetryTimeout: 18000,
     //
     // Default request retries count
     connectionRetryCount: 3,
@@ -357,7 +357,7 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+     //},
     /**
      * Gets executed when a refresh happens.
      * @param {String} oldSessionId session ID of the old session

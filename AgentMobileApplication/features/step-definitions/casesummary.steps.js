@@ -11,6 +11,7 @@ import {
 } from 'mailslurp-client';
 import BottomNavBar from '../pageobjects/bottom_nav_bar';
 import searchPage from '../pageobjects/search.page';
+import bottom_nav_bar from '../pageobjects/bottom_nav_bar';
 
 Given(/^I am on the case summary screen$/, async () => {
     await expect(CaseSummaryPage.screenTitle).toExist();
@@ -51,7 +52,7 @@ Then(/^I should see Welcome then my first and lastname$/, async (table) => {
 Then(/^I should see all filters$/, async () => {
     await expect(CaseSummaryPage.btnPending).toExist();
     await expect(CaseSummaryPage.btnIssued).toExist();
-    await expect(CaseSummaryPage.btnnorPlaced).toExist();
+    await expect(CaseSummaryPage.btnNotPlaced).toExist();
     await expect(CaseSummaryPage.btnAll).toExist();
 });
 
@@ -67,6 +68,7 @@ When(/^I am on the search screen$/, async () => {
 When(
     /^I enter insured fullname, I should see the case summary$/,
     async (table) => {
+        let policyCount = 0;
         const tableRows = table.hashes();
         for (const element of tableRows) {
             /*  await searchPage.searchPolicy(
@@ -78,9 +80,12 @@ When(
                 '(//XCUIElementTypeStaticText[@name="Search"])[2]',
             ).setValue(`${element.FirstName} ${element.LastName}`); */
             //await searchField.click();
-            const locator = `type == "XCUIElementTypeTextField"`;
-            const searchField = await $(`-ios predicate string:${locator}`);
-            await searchField.setValue(
+            //const locator = `type == "XCUIElementTypeTextField"`;1
+
+            //const locator = `name == "SearchID"`;
+            //const searchField = await $(`-ios predicate string:${locator}`);2
+            //await searchPage.txtSearchField.click();
+            await searchPage.txtSearchField.setValue(
                 element.FirstName + ' ' + element.LastName,
             );
             await driver.hideKeyboard('pressKey', 'return');
@@ -88,14 +93,48 @@ When(
             await expect($(`~${await element.Amount}`)).toExist();
             await expect($(`~${await element.Status}`)).toExist();
             await expect($(`~${await element.Filter}`)).toExist();
+            //policyCount++;
+            //await searchPage.txtSearchField.click();
+            //await searchPage.txtSearchField.clearValue();
+            //await searchPage.btnClearInput.waitForEnabled();
             await searchPage.btnClearInput.click();
-            await BottomNavBar.btnHome.click();
-            await BottomNavBar.btnSearch.click();
-            await driver.background(2);
+
+            //await BottomNavBar.btnHome.click();
+            //await BottomNavBar.btnSearch.click();
+            //await driver.background(2);
             //await driver.pause(2000);
         }
+        //console.log(`The Policy Count is ${policyCount}`);
+        //return policyCount;
     },
 );
+
+Given(/^I navigate to the case summary screen$/, async () => {
+    await bottom_nav_bar.btnProfile.click();
+    await bottom_nav_bar.btnHome.click();
+    await driver.setTimeouts(120000);
+    await expect(CaseSummaryPage.screenTitle).toHaveText('Cases');
+});
+
+When(/^I tap on the Issued filter$/, async () => {
+    await CaseSummaryPage.btnIssued.click();
+    //await searchPage.clickSearchField();
+});
+
+Then(/^I should seee the Issued cases$/, async () => {
+    expect($$('~Issued').length > 2);
+    //await driver.background(2);
+});
+
+When(/^I tap on the Not Placed filter$/, async () => {
+    await CaseSummaryPage.btnNotPlaced.click();
+    //await searchPage.clickSearchField();
+});
+
+Then(/^I should seee the Not Placed cases$/, async () => {
+    expect($$('~Not Placed').length > 2);
+    //await driver.background(2);
+});
 
 /* When(/^I enter sear text$/, async () => {
     await $('(//XCUIElementTypeStaticText[@name="Search"])[2]').click();

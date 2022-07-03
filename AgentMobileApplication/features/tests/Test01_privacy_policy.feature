@@ -5,6 +5,8 @@ Feature: Privacy Policy
   Scenario: As a user, I can launch the app
 
     Given I launch the app for the first time
+    When the push notification allert pops up
+    And I accept push notification
     When I lock device
     And I unlock device
     Then I should be on the App Privacy Screen

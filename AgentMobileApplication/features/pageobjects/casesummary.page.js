@@ -20,8 +20,8 @@ class CaseSummaryPage extends Page {
         return $('//XCUIElementTypeButton[@name="Issued"]');
     }
 
-    get btnnorPlaced() {
-        return $('~Not Placed');
+    get btnNotPlaced() {
+        return $('~Not placed');
     }
 
     get btnAll() {
