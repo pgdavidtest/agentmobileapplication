@@ -1,0 +1,29 @@
+@android @iOS @mobile-web
+Feature: Case Summary Screen
+
+
+  @TestCase1
+  Scenario Outline: As a user, I want to validate the case details
+
+    Given I am on the case summary screen
+    When I tap on the Search button
+    And I am on the search screen 
+    Then I enter inssured name, click oon the case then I should see the case details
+     | FullName                | PolicyType                     | PolicyNumber    | Amount         |         Status                  |   Filter      |  Commission  |      Requirement1      |      Requirement2     |     Requirement3      |     Requirement4      |     Underwriter       |    CustomerService    |    
+     | Alexandra White         | Value Plus Index UL            |   I_0004089A    | $275,000.00    | Pending UW                      |   Pending     |    100%      |  PENDING MISSING DATA  |   RECEIVED            |   REVIEWED            |                       |   Keith Beckman       |   Debi Noonan         |
+     | Annette Smiley          | Ameritas Growth Index UL       |   I_0004088A    | $75,000.00     | Application Complete            |   Pending     |    100%      |  RECEIVED              |   REVIEWED            |                       |                       |                       |   Tina Schanie        |
+     | Bill Snmmmmtestcasebb   | Ameritas Growth Index UL       |   I_0003918A    | $300,000.00    | Issued and Paid                 |   Pending     |     50%      |  CANCELLED             |   REVIEWED            |                       |                       |   Gary Strine         |   Sarah Boggs         |
+     | Jerry Arnold            | Value Plus Term 20             |   T_0012364A    | $125,000.00    | Pending UW                      |   Pending     |    100%      |  ORDERED               |   REQUIRED            |   REVIEWED            |                       |   Keith Beckman       |   Debi Noonan         |
+     | John Livingston         | Value Plus Term 15             |   T_0012270A    | $125,000.00    | Pending UW                      |   Pending     |    100%      |  ORDERED               |   REQUIRED            |   REVIEWED            |                       |   Keith Beckman       |   Cheryl Barth        |
+     | Matthew Elfrink         | Ameritas Growth Index UL       |   I_0004091A    | $100,000.00    | Application Complete            |   Pending     |    100%      |  RECEIVED              |   REVIEWED            |                       |                       |                       |   Kira Filipovich     |
+     | Matthew Neuropathy      | Ameritas Value Plus UL         |   U_0004657A    | $150,000.00    | Pending UW                      |   Pending     |    100%      |  PENDING MISSING DATA  |   RECEIVED            |   REVIEWED            |                       |   Keith Beckman       |   Tina Schanie        |
+     | Oliver Trolley          | Value Plus Term 10             |   T_0012691A    | $500,000.00    | Pending UW                      |   Pending     |    100%      |  ORDERED               |   REVIEWED            |                       |                       |   Keith Beckman       |   QA Model CSR        |
+     | Riley Stockhoff         | Ameritas Value Plus UL         |   U_0004672A    | $750,000.00    | Application Complete            |   Pending     |    100%      |  RECEIVED              |   REVIEWED            |                       |                       |                       |   Tina Schanie        |
+     | Tina Wyatt              | Value Plus Term 15             |   T_0012329A    | $150,000.00    | Pending UW                      |   Pending     |    100%      |  ORDERED               |   RECEIVED            |   REQUIRED            |    REVIEWED           |    Keith Beckman      |   Debi Noonan         |
+     | Jane Doe                | Ameritas Value Plus Whole Life |   L_1004560A    | $100,000.00    | Issued and Paid                 |   Issued      |    100%      |                        |                       |                       |                       |                       |                       |
+     | Judge Judy              | Ameritas Value Plus UL         |   U_0003894A    | $500,000.00    | Pending UW                      |   Issued      |    100%      |  ORDERED               |                       |                       |                       |    Keith Beckman      |   Tina Schanie        |
+     | Mobile Application      | Ameritas Growth Index UL       |   I_0004651A    | $10,000,000.00 | Issued Pending Delivery Unpaid  |   Issued      |    100%      |  ORDERED               |   RECEIVED            |                       |                       |    Keith Beckman      |   Jessica Vanhook     |
+     | Amy Fowler              | Ameritas Value Plus UL         |   U_0004146A    | $250,000.00    | Pending UW                      |   Not Placed  |    100%      |  RECEIVED              |   REQUIRED            |    REVIEWED           |                       |                       |   Debi Noonan         |
+     | Marie Antoinette        | Value Plus Term 30             |   T_0012045A    | $300,000.00    | Pending UW                      |   Not Placed  |    25%       |  ORDERED               |   RECEIVED            |    REVIEWED           |                       |    Carol Schueler     |   Sarah Boggs         |
+     | Willow Danan            | Ameritas Value Plus UL         |   U_0004148A    | $250,000.00    | Pending UW                      |   Not Placed  |    100%      |  RECEIVED              |   REVIEWED            |                       |                       |                       |   Tina Schanie        |
+     | Willow Lucy             | Ameritas Value Plus UL         |   U_0004142A    | $250,000.00    | Pending UW                      |   Not Placed  |    100%      |  RECEIVED              |   REQUIRED            |    REVIEWED           |                       |                       |   Debi Noonan         |

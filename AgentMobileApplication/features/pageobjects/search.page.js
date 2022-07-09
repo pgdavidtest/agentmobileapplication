@@ -7,7 +7,7 @@ class SearchPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get txtScreennTitle() {
+    get txtScreenTitle() {
         return $('(//XCUIElementTypeStaticText[@name="Search"])[1]');
     }
 

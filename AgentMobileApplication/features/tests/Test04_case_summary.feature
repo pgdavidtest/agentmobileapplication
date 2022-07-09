@@ -50,3 +50,35 @@ Feature: Case Summary Screen
      | Marie        |   Antoinette       |   T_0012045A    | $300,000.00    | Pending UW                      |   Not Placed  |
      | Willow       |   Danan            |   U_0004148A    | $250,000.00    | Pending UW                      |   Not Placed  |
      | Willow       |   Lucy             |   U_0004142A    | $250,000.00    | Pending UW                      |   Not Placed  |
+
+  @TestCase13
+  Scenario Outline: As a user, I want to view cases in the Issued bucket
+
+    Given I navigate to the case summary screen
+    When I tap on the Issued filter
+    Then I should seee the Issued cases
+
+  @TestCase15
+  Scenario Outline: As a user, I want to view cases in the Not Placed bucket
+
+    Given I am on the case summary screen
+    When I tap on the Not Placed filter
+    Then I should see the Not Placed cases
+
+  @TestCase16
+  Scenario Outline: As a user, I want to view cases in the All bucket
+
+    Given I am on the case summary screen
+    When I tap on the All filter
+    Then I should see the All cases
+
+  @TestCase17
+  Scenario Outline: As a user, I want to navigate to case details page and back
+
+    Given I am on the case summary screen
+    When I tap on the Issued filter
+    And I tap on the Pending filter
+    And I click on a case
+      | CaseAssesibilityID  |
+      | I_0004089A-Policy   |  
+    And I tap on the case details back button

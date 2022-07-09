@@ -4,6 +4,7 @@ import privacyPage from '../pageobjects/privacy.page';
 import SelectMFAPage from '../pageobjects/selectmfa.page';
 import DisclosurePage from '../pageobjects/disclosures.page';
 import CaseSummaryPage from '../pageobjects/casesummary.page';
+import CaseDetailsPage from '../pageobjects/casedetails.page';
 import {
     CommonActionsControllerApi,
     ExpiredInboxRecordProjectionFromJSON,
@@ -34,6 +35,12 @@ Then(/^I get the total number of cases$/, async () => {
     console.log(`The name is: ${myTotal}`);
 });
 
+When(/^I tap on the Pending filter$/, async () => {
+    await CaseSummaryPage.btnPending.click();
+    //let test = await CaseSummaryPage.getCaseCount();
+    //console.log(`this are the latest names ${test}`);
+});
+
 When(/^I swipe up on the screen$/, async () => {
     await CaseSummaryPage.swipeVertical();
     //let test = await CaseSummaryPage.getCaseCount();
@@ -61,7 +68,7 @@ When(/^I tap on the Search button$/, async () => {
 });
 
 When(/^I am on the search screen$/, async () => {
-    await expect(searchPage.txtScreennTitle).toExist();
+    await expect(searchPage.txtScreenTitle).toExist();
     //await searchPage.clickSearchField();
 });
 
@@ -89,11 +96,16 @@ When(
                 element.FirstName + ' ' + element.LastName,
             );
             await driver.hideKeyboard('pressKey', 'return');
+            /* if ((await element.PolicyNumber) === '') {
+                console.log('unavailable');
+            } else {
+                await expect($(`~${await element.PolicyNumber}`)).toExist();
+            } */
             await expect($(`~${await element.PolicyNumber}`)).toExist();
             await expect($(`~${await element.Amount}`)).toExist();
             await expect($(`~${await element.Status}`)).toExist();
             await expect($(`~${await element.Filter}`)).toExist();
-            //policyCount++;
+            policyCount++;
             //await searchPage.txtSearchField.click();
             //await searchPage.txtSearchField.clearValue();
             //await searchPage.btnClearInput.waitForEnabled();
@@ -104,8 +116,8 @@ When(
             //await driver.background(2);
             //await driver.pause(2000);
         }
-        //console.log(`The Policy Count is ${policyCount}`);
-        //return policyCount;
+        console.log(`The Policy Count is ${policyCount}`);
+        return policyCount;
     },
 );
 
@@ -131,10 +143,31 @@ When(/^I tap on the Not Placed filter$/, async () => {
     //await searchPage.clickSearchField();
 });
 
-Then(/^I should seee the Not Placed cases$/, async () => {
+Then(/^I should see the Not Placed cases$/, async () => {
     expect($$('~Not Placed').length > 2);
     //await driver.background(2);
 });
+
+When(/^I tap on the All filter$/, async () => {
+    await CaseSummaryPage.btnAll.click();
+    //await searchPage.clickSearchField();
+});
+
+Then(/^I should see the All cases$/, async () => {
+    expect(($$('~Pending').length = 7));
+    expect(($$('~Issued').length = 4));
+    expect(($$('~Not Placed').length = 2));
+    //await driver.background(2);
+});
+
+When(/^I tap on a case$/, async (table) => {
+    const tableRows = table.hashes();
+    for (const element of tableRows) {
+        await $(`~${element.CaseAssesibilityID}`).click();
+    }
+});
+
+
 
 /* When(/^I enter sear text$/, async () => {
     await $('(//XCUIElementTypeStaticText[@name="Search"])[2]').click();

@@ -4,7 +4,7 @@ import HomePage from '../pageobjects/casesummary.page';
 const assert = require('assert');
 const MailSlurp = require('mailslurp-client').default;
 const apiKey =
-    '97387d3ff06c6cc87197ac825588478768e854d352438f112dbd3161f7e56047';
+    '9508cbd7647971867f41674d31b6600948cf88883130438b54aa171f0926f0fb';
 const mailslurp = new MailSlurp({ apiKey });
 import LoginPage from '../pageobjects/login.page';
 import SelectMFAPage from '../pageobjects/selectmfa.page';
@@ -57,7 +57,7 @@ Then(/^I should be taken to the Text MFA verification screen$/, async () => {
 Given(/^I retrieve the MFA code$/, async () => {
     // fetch the email from mailslurp
     const email = await mailslurp.waitForLatestEmail(
-        '8d230675-3733-4ab0-8aab-a62ac869a2d2',
+        '9559020e-60c6-42a7-8f85-db6dc9e7ca9d',
         20000,
         true,
     ); //inbox_ID
