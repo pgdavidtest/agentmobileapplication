@@ -23,11 +23,11 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: ['./features/tests/Demo.feature'],
+    specs: ['./features/tests/Test*.feature'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
-        './features/tests/Test*.feature',
+        './features/tests/Demo.feature',
     ],
     //
     // ============
@@ -357,7 +357,7 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     // onComplete: function(exitCode, config, capabilities, results) {
-     //},
+    //},
     /**
      * Gets executed when a refresh happens.
      * @param {String} oldSessionId session ID of the old session
