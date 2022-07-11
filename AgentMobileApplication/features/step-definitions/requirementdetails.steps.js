@@ -3,18 +3,21 @@ import CaseSummaryPage from '../pageobjects/casesummary.page';
 import searchPage from '../pageobjects/search.page';
 import CaseDetailsPage from '../pageobjects/casedetails.page';
 import RequirementsPage from '../pageobjects/requiremennts.page';
+import AllureReporter from '@wdio/allure-reporter';
 
 Given(/^I am on the requirement details screen$/, async () => {
-    await expect(CaseSummaryPage.screenTitle).toExist();
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Requirement Details');
+    AllureReporter.addDescription(`Agent is on Requirement Details Page`);
+    await expect(RequirementsPage.txtScreenTitle).toExist();
 });
 
 Then(/^I tap on requirement$/, async (table) => {
-    //let forwardCount = $$('~Forward').length;
-    //for (var i = 0; i < forwardCount; i++) {
-    //    await expect($('~Forward')[i]).toHaveAttr('label', 'Forward');
-    //}
     const tableRows = table.hashes();
     for (const element of tableRows) {
+        AllureReporter.addSeverity('Critical');
+        AllureReporter.addFeature('Requirement Details');
+        AllureReporter.addDescription(`Agent tap's on a Requirement to open requirement details `);
         await $(`~${element.SubRequirement}`).click();
         await expect(RequirementsPage.txtScreenTitle).toExist();
         await expect(RequirementsPage.txtRequirementTypeValue).toHaveAttr(

@@ -87,7 +87,7 @@ Feature: Login
     #Then I should be on the MFA Screen
 
 
-  @TestCase7
+  @TestCase6
   Scenario Outline: As a user, I dont have access to app with user without access
 
     Given I am on the login page
@@ -99,7 +99,7 @@ Feature: Login
     And I enter the MFA code and tap verify
     Then I should get no access error message
 
-  @TestCase8
+  @TestCase7
   Scenario Outline: As a user, I can sign in with valid credential
 
     Given I am on the login page

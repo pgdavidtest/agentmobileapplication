@@ -1,5 +1,5 @@
 @android @iOS @mobile-web
-Feature: Case Summary Screen
+Feature: Case Details
 
 
   @TestCase1
@@ -8,7 +8,7 @@ Feature: Case Summary Screen
     Given I am on the case summary screen
     When I tap on the Search button
     And I am on the search screen 
-    Then I enter inssured name, click oon the case then I should see the case details
+    Then I enter inssured name, click on the case then I should see the case details
      | FullName                | PolicyType                     | PolicyNumber    | Amount         |         Status                  |   Filter      |  Commission  |      Requirement1      |      Requirement2     |     Requirement3      |     Requirement4      |     Underwriter       |    CustomerService    |    
      | Alexandra White         | Value Plus Index UL            |   I_0004089A    | $275,000.00    | Pending UW                      |   Pending     |    100%      |  PENDING MISSING DATA  |   RECEIVED            |   REVIEWED            |                       |   Keith Beckman       |   Debi Noonan         |
      | Annette Smiley          | Ameritas Growth Index UL       |   I_0004088A    | $75,000.00     | Application Complete            |   Pending     |    100%      |  RECEIVED              |   REVIEWED            |                       |                       |                       |   Tina Schanie        |

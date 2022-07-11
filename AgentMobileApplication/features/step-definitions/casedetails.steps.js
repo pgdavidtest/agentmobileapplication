@@ -15,16 +15,26 @@ import bottom_nav_bar from '../pageobjects/bottom_nav_bar';
 import CaseDetailsPage from '../pageobjects/casedetails.page';
 
 When(/^I tap on the case details back button$/, async () => {
+    AllureReporter.addSeverity('normal');
+    AllureReporter.addFeature('Navigation');
+    AllureReporter.addDescription(
+        `Agent is able to navigate from case details to case summary`,
+    );
     await expect(CaseDetailsPage.btnBackToHome).toExist();
     await CaseDetailsPage.tapBtnBackToHome();
     await expect(CaseSummaryPage.screenTitle).toExist();
 });
 
 Then(
-    /^I enter inssured name, click oon the case then I should see the case details$/,
+    /^I enter inssured name, click on the case then I should see the case details$/,
     async (table) => {
         const tableRows = table.hashes();
         for (const element of tableRows) {
+            AllureReporter.addSeverity('critical');
+            AllureReporter.addFeature('Case Details');
+            AllureReporter.addDescription(
+                `Agent is able to tap on a case to view and verify its details`,
+            );
             await $('(//XCUIElementTypeStaticText[@name="Search"])[2]').click();
             await searchPage.txtSearchField.setValue(element.FullName);
             await driver.hideKeyboard('pressKey', 'return');
@@ -95,6 +105,11 @@ Then(
 );
 
 When(/^I tap on requirements$/, async (table) => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Requirement');
+    AllureReporter.addDescription(
+        `Agent is able to tap on a requirement to view its sub requirements`,
+    );
     /* let downCount = $$('//XCUIElementTypeImage[@name="Go Down"]').length
     let upCount = $$('//XCUIElementTypeImage[@name="Go Up"]').length
     for (var i = 0; i < downCount; i++){

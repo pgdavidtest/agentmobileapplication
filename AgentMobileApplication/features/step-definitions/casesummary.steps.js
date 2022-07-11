@@ -36,12 +36,18 @@ Then(/^I get the total number of cases$/, async () => {
 });
 
 When(/^I tap on the Pending filter$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addDescription(`Agent is able to tap on the Pending filter`);
     await CaseSummaryPage.btnPending.click();
     //let test = await CaseSummaryPage.getCaseCount();
     //console.log(`this are the latest names ${test}`);
 });
 
 When(/^I swipe up on the screen$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addDescription(`Agent is able swipe up to view more cases`);
     await CaseSummaryPage.swipeVertical();
     //let test = await CaseSummaryPage.getCaseCount();
     //console.log(`this are the latest names ${test}`);
@@ -50,6 +56,11 @@ When(/^I swipe up on the screen$/, async () => {
 Then(/^I should see Welcome then my first and lastname$/, async (table) => {
     const tableRows = table.hashes();
     for (const element of tableRows) {
+        AllureReporter.addSeverity('critical');
+        AllureReporter.addFeature('Case Summary');
+        AllureReporter.addDescription(
+            `Agent sees their First and last name on getting to the case summary screen`,
+        );
         await expect(
             $(`~Welcome ${await element.FirstName} ${await element.LastName}`),
         ).toBeExisting();
@@ -57,6 +68,11 @@ Then(/^I should see Welcome then my first and lastname$/, async (table) => {
 });
 
 Then(/^I should see all filters$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addDescription(
+        `Agent sees all filters on case summary screen`,
+    );
     await expect(CaseSummaryPage.btnPending).toExist();
     await expect(CaseSummaryPage.btnIssued).toExist();
     await expect(CaseSummaryPage.btnNotPlaced).toExist();
@@ -64,10 +80,18 @@ Then(/^I should see all filters$/, async () => {
 });
 
 When(/^I tap on the Search button$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Navigation');
+    AllureReporter.addDescription(
+        `Agent is able to navigate to the search screen`,
+    );
     await BottomNavBar.btnSearch.click();
 });
 
 When(/^I am on the search screen$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Search');
+    AllureReporter.addDescription(`Agent is on the Search screen`);
     await expect(searchPage.txtScreenTitle).toExist();
     //await searchPage.clickSearchField();
 });
@@ -78,6 +102,12 @@ When(
         let policyCount = 0;
         const tableRows = table.hashes();
         for (const element of tableRows) {
+            AllureReporter.addSeverity('critical');
+            AllureReporter.addFeature('Search');
+            AllureReporter.addFeature('Case Summary');
+            AllureReporter.addDescription(
+                `Agent is able to search, view and verify case summary`,
+            );
             /*  await searchPage.searchPolicy(
                 `${element.FirstName} ${element.LastName}`,
             ); */
@@ -122,6 +152,12 @@ When(
 );
 
 Given(/^I navigate to the case summary screen$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Navigation');
+    AllureReporter.addDescription(
+        `Agent is able to navigate to Case Summary and view Case Summary`,
+    );
     await bottom_nav_bar.btnProfile.click();
     await bottom_nav_bar.btnHome.click();
     await driver.setTimeouts(120000);
@@ -129,31 +165,63 @@ Given(/^I navigate to the case summary screen$/, async () => {
 });
 
 When(/^I tap on the Issued filter$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(`Agent is able to tap on the Issued Filter`);
     await CaseSummaryPage.btnIssued.click();
     //await searchPage.clickSearchField();
 });
 
 Then(/^I should seee the Issued cases$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(
+        `Agent is able view Case Summary base on the Issued Filter`,
+    );
     expect($$('~Issued').length > 2);
     //await driver.background(2);
 });
 
 When(/^I tap on the Not Placed filter$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(
+        `Agent is able to tap on the Not Placed Filter`,
+    );
     await CaseSummaryPage.btnNotPlaced.click();
     //await searchPage.clickSearchField();
 });
 
 Then(/^I should see the Not Placed cases$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(
+        `Agent is able view Case Summary base on the Not Placed Filter`,
+    );
     expect($$('~Not Placed').length > 2);
     //await driver.background(2);
 });
 
 When(/^I tap on the All filter$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(`Agent is able to tap on the All Filter`);
     await CaseSummaryPage.btnAll.click();
     //await searchPage.clickSearchField();
 });
 
 Then(/^I should see the All cases$/, async () => {
+    AllureReporter.addSeverity('critical');
+    AllureReporter.addFeature('Case Summary');
+    AllureReporter.addFeature('Filter');
+    AllureReporter.addDescription(
+        `Agent is able view Case Summary base on the All Filter`,
+    );
     expect(($$('~Pending').length = 7));
     expect(($$('~Issued').length = 4));
     expect(($$('~Not Placed').length = 2));
@@ -163,11 +231,12 @@ Then(/^I should see the All cases$/, async () => {
 When(/^I tap on a case$/, async (table) => {
     const tableRows = table.hashes();
     for (const element of tableRows) {
+        AllureReporter.addSeverity('critical');
+        AllureReporter.addFeature('Case Summary');
+        AllureReporter.addDescription(`Agent is able to tap on a case`);
         await $(`~${element.CaseAssesibilityID}`).click();
     }
 });
-
-
 
 /* When(/^I enter sear text$/, async () => {
     await $('(//XCUIElementTypeStaticText[@name="Search"])[2]').click();

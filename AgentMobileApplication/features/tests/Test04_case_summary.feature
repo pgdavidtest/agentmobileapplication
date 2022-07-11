@@ -1,5 +1,5 @@
 @android @iOS @mobile-web
-Feature: Case Summary Screen
+Feature: Case Summary
 
   @TestCase1
   Scenario Outline: As a user, I want to see Welcome with my first and last name displayed
@@ -10,12 +10,18 @@ Feature: Case Summary Screen
      | Paul          | Lawless     |
 
   @TestCase2
+  Scenario: As a user, I can scroll to see more cases
+
+    Given I am on the case summary screen
+    When I swipe up on the screen
+
+  @TestCase3
   Scenario Outline: As a user, I want to see all filters displayed
 
     Given I am on the case summary screen
     Then I should see all filters
 
-  @TestCase2
+  @TestCase4
   Scenario Outline: As a user, I want to see Welcome with my first and last name displayed
 
     Given I am on the case summary screen
@@ -25,7 +31,7 @@ Feature: Case Summary Screen
     When I tap on select MFA drop down button
     Then I should see select MFA code options
 
-  @TestCase12
+  @TestCase5
   Scenario Outline: As a user, I want to see and verify each case in the Pending bucket
 
     Given I am on the case summary screen
@@ -51,34 +57,34 @@ Feature: Case Summary Screen
      | Willow       |   Danan            |   U_0004148A    | $250,000.00    | Pending UW                      |   Not Placed  |
      | Willow       |   Lucy             |   U_0004142A    | $250,000.00    | Pending UW                      |   Not Placed  |
 
-  @TestCase13
+  @TestCase6
   Scenario Outline: As a user, I want to view cases in the Issued bucket
 
     Given I navigate to the case summary screen
     When I tap on the Issued filter
     Then I should seee the Issued cases
 
-  @TestCase15
+  @TestCase7
   Scenario Outline: As a user, I want to view cases in the Not Placed bucket
 
     Given I am on the case summary screen
     When I tap on the Not Placed filter
     Then I should see the Not Placed cases
 
-  @TestCase16
+  @TestCase8
   Scenario Outline: As a user, I want to view cases in the All bucket
 
     Given I am on the case summary screen
     When I tap on the All filter
     Then I should see the All cases
 
-  @TestCase17
+  @TestCase9
   Scenario Outline: As a user, I want to navigate to case details page and back
 
     Given I am on the case summary screen
     When I tap on the Issued filter
     And I tap on the Pending filter
-    And I click on a case
+    And I tap on a case
       | CaseAssesibilityID  |
       | I_0004089A-Policy   |  
     And I tap on the case details back button

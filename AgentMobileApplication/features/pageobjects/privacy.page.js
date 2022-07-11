@@ -40,6 +40,10 @@ class PrivacyPage extends Page {
         return $('~CrashReportingOption');
     }
 
+    get btnBackToProofilePage() {
+        return $('(//XCUIElementTypeStaticText[@name="Profile"])[1]');
+    }
+
     /**
      * methods to encapsule automation code to interact with the page
      */
@@ -63,6 +67,10 @@ class PrivacyPage extends Page {
 
     async tapCrashReporting() {
         await this.btnCrashReporting.click();
+    }
+
+    async tapBtnBackTooProfilePage() {
+        await this.btnBackToProofilePage.click();
     }
 }
 
